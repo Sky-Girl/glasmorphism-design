@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Glassmorphism Design">
+    <meta name="keywords" content="HTML, CSS, Javascript, Glassmorphism, calculator">
+    <meta name="author" content="SkyGirl">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Rubik+Burned&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">    <link type="image/png" sizes="96x96" rel="icon" href=".../icons8-clouds-96.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+</head>
+<body class="home-background">
+    <main class="main-container">
+        <header>
+            <div class="header-container">
+                <div class="nav-toggle-btn">
+                    <div class="site-title">
+                        <span class="logo">Sky Girl</span>
+                        <p class="subtitle"> one step at a time</p>
+                    </div>
+                    <div class="menu-btn">
+                        <div class="menu-btn-burger"></div>
+                    </div>
+                </div>
+
+                <nav class="nav-toggle" >
+                    <ul>
+                        <li><a href="index.html" class="current">Home</a></li>
+                        <li><a href="calculator.html">Calculator</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="home-section">
+            <h1>
+                Learn to enjoy,
+                every moment of your life
+            </h1>
+        </section>
+    </main>
+    <script>
+        //NavBar toggle//
+        const menuBtn = document.querySelector('.menu-btn');
+        const navToggleShow = document.querySelector('.nav-toggle');
+        let menuOpen = false;
+        menuBtn.addEventListener('click',() => {
+            if(!menuOpen){
+                menuBtn.classList.add('open');
+                menuOpen = true;
+                navToggleShow.style.display = 'block';
+            } else {
+                menuBtn.classList.remove('open');
+                menuOpen = false
+                navToggleShow.style.display = 'none';
+            }
+        });
+        //....//
+
+</script>
+
+
+</body>
+</html>

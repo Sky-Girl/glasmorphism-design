@@ -1,0 +1,374 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* General styles */
+header {
+    padding: 0.5em 0;
+}
+.main-container {
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+}
+/* .... */
+/* || Typography */
+h1 {
+    font-family: 'DynaPuff', cursive;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #d10a6a;
+    text-transform: capitalize;
+    white-space: pre;
+}
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #d10a6a;
+}
+p, a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.48rem;
+    letter-spacing: 0.2px;
+    text-align: left;
+}
+span {
+    color: #a80359;
+}
+/* … */
+/* || Header and Main Navigation */
+.header-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-family: 'Rubik Burned', cursive;
+    font-size: 1.5rem;
+    background: -webkit-linear-gradient(#ab042b, #f588cf);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.subtitle {
+    font-family: 'DynaPuff', cursive;
+    font-weight: 700;
+    font-size: 0.5rem;
+    color: #d10a6a;
+    text-align: left;
+}
+.menu-btn {
+    display: none;
+}
+.nav-toggle {
+    display: block;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+nav li {
+    margin-left: 1em;
+}
+nav a {
+    text-decoration: none;
+    font-family: 'DynaPuff', cursive;
+    color: #d10a6a;
+    padding: 0.2em;
+}
+nav a:hover,
+nav a:focus {
+    color: #a80359;
+}
+.current {
+    border-bottom: 1px solid #e32782;
+}
+/* … */
+/* Background styles for home page */
+.home-background {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #ff9a9a 10%, #f6416c 100%);
+}
+.home-background::before,
+.home-background::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+.home-background::before {
+    clip-path: circle(30% at left 20%);
+    background: linear-gradient(135deg,#f6416c 10%, #ff9a9a 100%);
+    opacity: 0.2;
+}
+.home-background::after {
+    clip-path: circle(25% at right 80%);
+    background: linear-gradient(135deg,#f6416c 10%, #ff9a9a 100%);
+    opacity: 0.2;
+}
+.home-section {
+    height: 85vh;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+/* … */
+/* Background styles for calculator */
+.calculator-background{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(#2196f3, #e91e63);
+    overflow: hidden;
+}
+.calculator-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+.bubbles {
+    position: absolute;
+    left: 0;
+    bottom: -100px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.bubbles span{
+    position: relative;
+    height: 60px;
+    width: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    animation: bubbleMove 10s linear infinite;
+    overflow: hidden;
+}
+@keyframes bubbleMove {
+    100% {
+        transform: translateY(-70vh);
+    }
+}
+.bubbles span.one{
+    animation-delay: 2s;
+    transform: scale(2);
+}
+.bubbles span.two{
+    animation-delay: 1.7s;
+    transform: scale(0.5);
+}
+.bubbles span.three{
+    animation-delay: 0.2s;
+    transform: scale(1.3);
+}
+.bubbles span.four{
+    animation-delay: 4s;
+    transform: scale(1.15);
+}
+.bubbles span.five{
+    animation-delay: 1s;
+    transform: scale(1.6);
+}
+.bubbles span.six{
+    animation-delay: 2.7s;
+    transform: scale(1.9);
+}
+.bubbles span.seven{
+    animation-delay: 5s;
+    transform: scale(0.75);
+}
+.bubbles span::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40%;
+    height: 60px;
+    transform: skew(45deg) translateX(150px);
+    background:rgba(255, 255, 255, 0.15);
+    animation: mirror 3s linear infinite;
+}
+@keyframes mirror {
+        100% {
+            transform: translateX(-450px)
+        }
+}
+.bubbles span.one::before{
+    animation-delay: 2s;
+}
+.bubbles span.two::before{
+    animation-delay: 1.7s;
+}
+.bubbles span.three::before{
+    animation-delay: 0.2s;
+}
+.bubbles span.four::before{
+    animation-delay: 4s;
+}
+.bubbles span.five::before{
+    animation-delay: 1s;
+}
+.bubbles span.six::before{
+    animation-delay: 2.7s;
+}
+.bubbles span.seven::before{
+    animation-delay: 5s;
+}
+/* .... */
+/* calculator styles */
+.cal-container{
+    width: 360px;
+    padding: 15px;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+.cal-container input[type="text"]{
+    width: 100%;
+    height: 70px;
+    margin: 0 3px;
+    outline: none;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    color: #fff;
+    text-align: right;
+    padding-right: 20px;
+}
+.cal-container input[type="button"]{
+    height: 65px;
+    width: calc(100% / 4 - 5px);
+    font-size: 20px;
+    color: #fff;
+    background: transparent;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.cal-container input[type="button"]:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+/* ..... */
+
+/* Media styles */
+@media (max-width: 675px) {
+    /* Typography */
+h1 {
+    font-family: 'DynaPuff', cursive;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #d10a6a;
+    text-transform: capitalize;
+    white-space: pre;
+}
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #d10a6a;
+}
+p, a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.48rem;
+    letter-spacing: 0.2px;
+    text-align: left;
+}
+span {
+    color: #a80359;
+}
+/* … */
+/* Header Styles */
+    .header-container {
+        flex-direction: column;
+    }
+    header {
+        text-align: center;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    nav li {
+        margin: 0.5em 0;
+    }
+    /* MENU TOGGLE BNT */
+    .nav-toggle-btn {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    .nav-toggle {
+        display: none;
+    }
+    .menu-btn {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+    }
+    .menu-btn-burger {
+        width: 50px;
+        height: 6px;
+        background:#d10a6a;
+        border-radius: 5px;
+        transition: all 0.5s ease-in-out;
+    }
+    .menu-btn-burger::before,
+    .menu-btn-burger::after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 6px;
+        background: #d10a6a;
+        border-radius: 5px;
+        transition: all 0.5s ease-in-out;
+    }
+    .menu-btn-burger::before{
+        transform: translate(-25px, -16px);
+    }
+    .menu-btn-burger::after {
+        transform: translate(-25px, 16px);
+    }
+    /* Animamtion */
+    .menu-btn.open .menu-btn-burger {
+        transform: translateX(-75px);
+        background: transparent;
+    }
+    .menu-btn.open .menu-btn-burger::before{
+        transform: rotate(45deg) translate(35px, -35px);
+    }
+    .menu-btn.open .menu-btn-burger::after{
+        transform: rotate(-45deg) translate(35px, 35px);
+    }
+/* ... */
+}
+/* ... */

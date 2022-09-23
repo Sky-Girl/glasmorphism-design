@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Glassmorphism Design">
+    <meta name="keywords" content="HTML, CSS, Javascript, Glassmorphism, calculator">
+    <meta name="author" content="SkyGirl">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Rubik+Burned&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">    <link type="image/png" sizes="96x96" rel="icon" href=".../icons8-clouds-96.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body class="calculator-background">
+    <main class="main-container">
+        <header>
+            <div class="header-container">
+                <div class="nav-toggle-btn">
+                    <div class="site-title">
+                        <span class="logo">Sky Girl</span>
+                        <p class="subtitle"> one step at a time</p>
+                    </div>
+                    <div class="menu-btn">
+                        <div class="menu-btn-burger"></div>
+                    </div>
+                </div>
+
+                <nav class="nav-toggle" >
+                    <ul>
+                        <li><a href="index.html" >Home</a></li>
+                        <li><a href="calculator.html" class="current">Calculator</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="calculator-section">
+            <div class="bubbles">
+                <span class="one"></span>
+                <span class="two"></span>
+                <span class="three"></span>
+                <span class="four"></span>
+                <span class="five"></span>
+                <span class="six"></span>
+                <span class="seven"></span>
+            </div>
+            <div class="cal-container">
+                <form action="#" name="forms">
+                    <input type="text" name="answer" id="keyboard-input" readonly>
+                    <div class="buttons">
+                        <input type="button" value="AC" onclick="forms.answer.value = ''">
+                        <input type="button" value="DEL" onclick="forms.answer.value = forms.answer.value.substr (0 , forms.answer.value.length -1)">
+                        <input title="it's not working yet" type="button" value="%" onclick="forms.answer.value +='%'">
+                        <input type="button" value="/" onclick="forms.answer.value += '/'">
+                    </div>
+                    <div class="buttons">
+                        <input type="button" value="7" onclick="forms.answer.value += '7'">
+                        <input type="button" value="8" onclick="forms.answer.value += '8'">
+                        <input type="button" value="9" onclick="forms.answer.value += '9'">
+                        <input type="button" value="*" onclick="forms.answer.value += '*'">
+                    </div>
+                    <div class="buttons">
+                        <input type="button" value="4" onclick="forms.answer.value += '4'">
+                        <input type="button" value="5" onclick="forms.answer.value += '5'">
+                        <input type="button" value="6" onclick="forms.answer.value += '6'">
+                        <input type="button" value="-" onclick="forms.answer.value += '-'">
+                    </div>
+                    <div class="buttons">
+                        <input type="button" value="1" onclick="forms.answer.value += '1'">
+                        <input type="button" value="2" onclick="forms.answer.value += '2'">
+                        <input type="button" value="3" onclick="forms.answer.value += '3'">
+                        <input type="button" value="+" onclick="forms.answer.value += '+'">
+                    </div>
+                    <div class="buttons">
+                        <input type="button" value="0" onclick="forms.answer.value += '0'">
+                        <input type="button" value="00" onclick="forms.answer.value += '00'">
+                        <input type="button" value="." onclick="forms.answer.value += '.'">
+                        <input type="button" value="=" onclick="forms.answer.value = eval(forms.answer.value)">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+<script>
+    //Manu Button toggle
+    const menuBtn = document.querySelector('.menu-btn');
+    const navToggleShow = document.querySelector('.nav-toggle');
+    let menuOpen = false;
+    menuBtn.addEventListener('click',() => {
+        if(!menuOpen){
+            menuBtn.classList.add('open');
+            menuOpen = true;
+            navToggleShow.style.display = 'block';
+        } else {
+            menuBtn.classList.remove('open');
+            menuOpen = false
+            navToggleShow.style.display = 'none';
+        }
+    });
+    //Keyboard events
+    const keyboardInput = document.getElementById('keyboard-input');
+    document.addEventListener('keydown',(event) => {
+        if(event.key == 0 ){ keyboardInput.value += event.key }
+        if(event.key == 1 ){ keyboardInput.value += event.key }
+        if(event.key == 2 ){ keyboardInput.value += event.key }
+        if(event.key == 3 ){ keyboardInput.value += event.key }
+        if(event.key == 4 ){ keyboardInput.value += event.key }
+        if(event.key == 5 ){ keyboardInput.value += event.key }
+        if(event.key == 6 ){ keyboardInput.value += event.key }
+        if(event.key == 7 ){ keyboardInput.value += event.key }
+        if(event.key == 8 ){ keyboardInput.value += event.key }
+        if(event.key == 9 ){ keyboardInput.value += event.key }
+        if(event.key == '+' ){ keyboardInput.value += event.key }
+        if(event.key == '-' ){ keyboardInput.value += event.key }
+        if(event.key == '*' ){ keyboardInput.value += event.key }
+        if(event.key == '/' ){ keyboardInput.value += event.key }
+        if(event.key == '.' ){ keyboardInput.value += event.key }
+        // we need help in here
+       // if(event.key == '%' ){ keyboardInput.value += keyboardInput.value*=0.01 }
+        // we need help in here ^
+        if(event.key == '' ){ keyboardInput.value += event.key }
+        if(event.key == '=' ){ keyboardInput.value = eval(keyboardInput.value)}
+        if(event.key == 'Enter'){ keyboardInput.value = eval(keyboardInput.value)}
+        if(event.key == 'Backspace' ){ keyboardInput.value = keyboardInput.value.slice(0,-1) }
+
+
+
+
+
+        console.log(event)
+    });
+
+</script>
+
+
+</body>
+</html>
