@@ -39,6 +39,10 @@
             </div>
         </header>
         <section class="calculator-section">
+            <div class="popup">
+                <span> try using keyboard :) </span>
+                <button id="close"> OK </button>
+            </div>
             <div class="bubbles">
                 <span class="one"></span>
                 <span class="two"></span>
@@ -102,6 +106,18 @@
             navToggleShow.style.display = 'none';
         }
     });
+    //Pop-Up
+    window.addEventListener("load", function(){
+                setTimeout(
+                    function open(event){
+                        document.querySelector(".popup").style.display = "block";
+                    },
+                    1000
+                )
+            });
+            document.querySelector("#close").addEventListener("click", function(){
+                document.querySelector(".popup").style.display = "none";
+            });
     //Keyboard events
     const keyboardInput = document.getElementById('keyboard-input');
     document.addEventListener('keydown',(event) => {

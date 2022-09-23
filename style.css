@@ -271,8 +271,41 @@ nav a:focus {
 .cal-container input[type="button"]:hover {
     background: rgba(255, 255, 255, 0.1);
 }
+/* pop-up */
+.popup{
+    width: 400px;
+    height: 100px;
+    text-align: center;
+    display: none;
+    position: absolute;
+    right: -14%;
+    bottom: -5%;
+    background: linear-gradient(#2196f3, #e91e63);
+    opacity: 0.8;
+    border-radius: 8px;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    padding: 10px 20px;
+}
+.popup span, button{
+    font-family: 'DynaPuff', cursive;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+}
+.popup button {
+    width: 100px;
+    display: block;
+    background: transparent;
+    font-size: 1.5rem;
+    color: #fff;
+    border: 2px dotted #2196f3;
+    outline: none;
+    cursor: pointer;
+    margin: 20px auto;
+}
 /* ..... */
-
 /* Media styles */
 @media (max-width: 675px) {
     /* Typography */
